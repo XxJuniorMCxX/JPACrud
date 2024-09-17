@@ -5,6 +5,8 @@
 package com.mycompany.pruebajpa1.logica;
 
 import com.mycompany.pruebajpa1.persistencia.ControladoraPersistencia;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -17,10 +19,47 @@ public class Controladora {
     public void crearAlumno(Alumno alumno) {
         controlPersistencia.crearAlumno(alumno);
     }
+
     public void eliminarAlumno(int id) {
         controlPersistencia.eliminarAlumno(id);
     }
-    public void editarAlumno(Alumno alumno){
+
+    public void editarAlumno(Alumno alumno) {
         controlPersistencia.editarAlumno(alumno);
     }
+
+    public Alumno traerAlumno(int id) {
+        return controlPersistencia.traerAlumno(id);
+    }
+
+    public List<Alumno> traerLista() {
+        return controlPersistencia.traerLista();
+    }
+
+    //Datos de la Carrera & Alumno
+    public void crearCarrera(Carrera carrera) {
+        controlPersistencia.crearCarrera(carrera);
+    }
+
+    public void eliminarCarrera(int id) {
+        controlPersistencia.eliminarCarrera(id);
+    }
+
+    public void editarCarrera(Carrera carrera) {
+        controlPersistencia.editarCarrera(carrera);
+    }
+
+    public Carrera traerCarrera(int id) {
+        return controlPersistencia.traerCarrera(id);
+    }
+
+//    public List<Carrera> traerListaCarreras() {
+//        return controlPersistencia.traerListaCarreras();
+//    }
+    public ArrayList<Carrera>traerCarreras(){
+        return controlPersistencia.TraerListaCarreras();
+    }
+    
+ 
+
 }
