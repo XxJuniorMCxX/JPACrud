@@ -6,7 +6,10 @@ package com.mycompany.pruebajpa1;
 import com.mycompany.pruebajpa1.logica.Alumno;
 import com.mycompany.pruebajpa1.logica.Carrera;
 import com.mycompany.pruebajpa1.logica.Controladora;
+import com.mycompany.pruebajpa1.logica.Materia;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.LinkedList;
 import java.util.List;
 
 /**
@@ -17,44 +20,49 @@ public class PruebaJPA1 {
 
     public static void main(String[] args) {
         System.out.println("Controlado de Capaz");
-        //ControladoraPersistencia controladoraAlumno = new ControladoraPersistencia();
         Controladora control = new Controladora();
-//        //dar de alta a un alumno
-//        Alumno alumno = new Alumno(50, "Pedro", "Castillo Torres", new Date());
-////        control.crearAlumno(alumno);
-//        //dar de baja a un alumno
-////        control.eliminarAlumno(50);
-////      Editar Alumno
-//        alumno.setNombre("Pedro Miguel");
-//        control.editarAlumno(alumno);
-        //mostrar alumno por id y grupal busqueda
-//        control.traerAlumno(1);
-//        Alumno alumno = control.traerAlumno(2);
-//        System.out.println("Imprmir Alumno Individual");
-//        System.out.println("El alumno es: " + alumno.toString());
-//        System.out.println("Imprimir Alumnos Grupal");
-//        List<Alumno> alumnosLista = control.traerLista();
-//        for (Alumno alumno1 : alumnosLista) {
-//             System.out.println("Lista De Alumnos: " + alumno1.toString());
-//        }
-//        System.out.println("------------------------------------");
-
-        //System.out.println("Modelo Entidad - Relación");
-        //Crear Carrera
-        Carrera carrera = new Carrera(2, "Ingenieria Industrial");
-        //Guardar Carrera en BD
+        
+        //creamos lista de materias y las agregamos
+        List<Materia> listaMaterias = new ArrayList<>();
+        
+        //creamos carrera con lista de materias 
+        Carrera carrera = new Carrera(1, "Tecnicatura en Programación", listaMaterias);
+        
+        //Guardamos Carrera en BD
         control.crearCarrera(carrera);
         
-        //Crear Alumno Carrera
-        Alumno alumno = new Alumno(1, "Ana", "Sernaque Tezen", new Date(), carrera);
-
-        //guardamos el Alumno en la BD
+        
+        //Crear Materias
+        Materia mate1 = new Materia(1, "Programación I", "Cuatrimestral",carrera);
+        Materia mate2 = new Materia(2, "Programación II", "Cuatrimestral",carrera);
+        Materia mate3 = new Materia(3, "Programación Avanzada", "Anual",carrera);
+        
+        
+        //Guardados En BD
+        control.crearMateria(mate1);
+        control.crearMateria(mate2);
+        control.crearMateria(mate3);
+        
+        //Agregamos Lista De Materias
+        listaMaterias.add(mate1);
+        listaMaterias.add(mate2);
+        listaMaterias.add(mate3);
+        
+        
+        //seteamos datos de carrera
+        carrera.setListaMateria(listaMaterias);
+        control.editarCarrera(carrera);
+        
+        //Crear Alumno Con La Carrera
+        Alumno alumno = new Alumno(1, "Junior", "Castillo Yarlequé", new Date(), carrera);
+        //Guardamos Alumno en La Base De Datos
         control.crearAlumno(alumno);
-
-        System.out.println("Observamos Resultados");
-        Alumno alumn = control.traerAlumno(3);
-        System.out.println(alumn.toString());
-      
-
+        
+        //Vemos Resultado
+        System.out.println("******************");
+        System.out.println("--------Datos Alumno----------");
+        control.traerAlumno(1);
+        System.out.println("Alumno " + alumno.toString());
+       
     }
 }

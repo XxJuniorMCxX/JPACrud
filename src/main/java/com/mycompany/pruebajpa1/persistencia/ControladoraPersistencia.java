@@ -6,6 +6,7 @@ package com.mycompany.pruebajpa1.persistencia;
 
 import com.mycompany.pruebajpa1.logica.Alumno;
 import com.mycompany.pruebajpa1.logica.Carrera;
+import com.mycompany.pruebajpa1.logica.Materia;
 import com.mycompany.pruebajpa1.persistencia.exceptions.NonexistentEntityException;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,6 +21,7 @@ public class ControladoraPersistencia {
 
     AlumnoJpaController alumnoJPA = new AlumnoJpaController();
     CarreraJpaController carreraJPA = new CarreraJpaController();
+    MateriaJpaController materiaJPA = new MateriaJpaController();
 
     public void crearAlumno(Alumno alumno) {
         alumnoJPA.create(alumno);
@@ -77,9 +79,40 @@ public class ControladoraPersistencia {
 //    public List<Carrera> traerListaCarreras() {
 //        return carreraJPA.findCarreraEntities();
 //    }
-    public ArrayList<Carrera>TraerListaCarreras(){
-        List<Carrera>lista=carreraJPA.findCarreraEntities();
+    public ArrayList<Carrera> TraerListaCarreras() {
+        List<Carrera> lista = carreraJPA.findCarreraEntities();
         ArrayList<Carrera> listaCarreras = new ArrayList<>(lista);
         return listaCarreras;
+    }
+
+    //Metodos Para Crear Materias
+    public void crearMateria(Materia materia) {
+        materiaJPA.create(materia);
+    }
+
+    public void eliminarMateria(int id) {
+        try {
+            materiaJPA.destroy(id);
+        } catch (NonexistentEntityException ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public void editarMateria(Materia materia) {
+        try {
+            materiaJPA.edit(materia);
+        } catch (Exception ex) {
+            Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public Materia traerMateria(int id) {
+        return materiaJPA.findMateria(id);
+    }
+
+    public ArrayList<Materia> TraerListaMaterias() {
+        List<Materia> lista = materiaJPA.findMateriaEntities();
+        ArrayList<Materia> listaMaterias = new ArrayList<>(lista);
+        return listaMaterias;
     }
 }

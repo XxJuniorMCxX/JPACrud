@@ -59,7 +59,32 @@ public class Controladora {
     public ArrayList<Carrera>traerCarreras(){
         return controlPersistencia.TraerListaCarreras();
     }
+
+     //Datos de la Materia & Carrera
     
+    public void crearMateria(Materia materia) {
+        controlPersistencia.crearMateria(materia);
+    }
+
+    public void eliminarMateria(int id) {
+        controlPersistencia.eliminarMateria(id);
+    }
+
+    public void editarMateria(Materia materia) {
+        controlPersistencia.editarMateria(materia);
+    }
+
+    public Materia traerMateria(int id) {
+        return controlPersistencia.traerMateria(id);
+    }
+
+
+//    public List<Carrera> traerListaCarreras() {
+//        return controlPersistencia.traerListaCarreras();
+//    }
+    public ArrayList<Materia>traerMaterias(){
+        return controlPersistencia.TraerListaMaterias();
+    }
  
 
 }

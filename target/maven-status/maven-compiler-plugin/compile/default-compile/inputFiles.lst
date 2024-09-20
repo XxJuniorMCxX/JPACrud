@@ -1,2 +1,12 @@
-C:\Users\DREP\Documents\NetBeansProjects\PruebaJPA1\src\main\java\com\mycompany\pruebajpa1\logica\Alumno.java
-C:\Users\DREP\Documents\NetBeansProjects\PruebaJPA1\src\main\java\com\mycompany\pruebajpa1\PruebaJPA1.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\logica\Carrera.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\logica\Materia.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\persistencia\AlumnoJpaController.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\persistencia\CarreraJpaController.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\persistencia\MateriaJpaController.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\persistencia\exceptions\PreexistingEntityException.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\persistencia\exceptions\IllegalOrphanException.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\logica\Controladora.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\persistencia\ControladoraPersistencia.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\persistencia\exceptions\NonexistentEntityException.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\PruebaJPA1.java
+C:\Users\DREP\Documents\NetBeansProjects\JPACrud\src\main\java\com\mycompany\pruebajpa1\logica\Alumno.java
